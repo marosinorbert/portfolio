@@ -535,25 +535,63 @@ body {
     }
 }
 @media (max-width: 800px) {
-    .nav-links {
+.nav-links {
         display: none;
-        position: absolute;
-        top: 64px;
+        position: fixed;            /* fixed a viewporthoz */
+        top: 64px;                  /* pontosan a header alja */
         right: 0;
-        background: var(--blur-bg);
-        flex-direction: column;
         width: 200px;
+        max-height: calc(100vh - 64px); /* sose lógjon ki */
+        overflow-y: auto;           /* scroll, ha túl sok elem */
+        flex-direction: column;
+        background: var(--blur-bg);
         box-shadow: var(--shadow);
-        border-radius: 0 0 0 18px;
-        padding: 1.5em 0;
+        border-radius: 0 0 18px 18px;
+        padding: 1em 1.5em;         /* belső margó, hogy a szöveg ne lógjon */
         z-index: 200;
         gap: 1.5em;
-        align-items: flex-end;
-        text-align: right;
+        align-items: flex-start;    /* szövegek balra igazítva, ne lógjanak */
+        text-align: left;
+        box-sizing: border-box;     /* padding beleszámít a szélességbe */
     }
     .nav-links.open {
-        display: flex;
+            display: flex;
+            animation: dropdownFadeIn 0.35s cubic-bezier(.4,0,.2,1);
+            box-shadow: 0 8px 32px 0 #C2881133, 0 1.5px 0 0 var(--secondary);
+            background: linear-gradient(120deg, var(--blur-bg) 80%, #fffbe6 100%);
+            border: 1.5px solid var(--secondary);
+            border-top: none;
+            backdrop-filter: blur(12px);
+            overflow: hidden;
     }
+        .nav-links.open li {
+            opacity: 0;
+            transform: translateY(-12px);
+            animation: dropdownItemFadeIn 0.5s cubic-bezier(.4,0,.2,1) forwards;
+        }
+        .nav-links.open li:nth-child(1) { animation-delay: 0.08s; }
+        .nav-links.open li:nth-child(2) { animation-delay: 0.16s; }
+        .nav-links.open li:nth-child(3) { animation-delay: 0.24s; }
+        .nav-links.open li:nth-child(4) { animation-delay: 0.32s; }
+        .nav-links.open li:nth-child(5) { animation-delay: 0.40s; }
+        .nav-links.open li a {
+            padding: 0.5em 0.7em;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .nav-links.open li a:hover {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 2px 8px #FFD70033;
+        }
+        @keyframes dropdownFadeIn {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes dropdownItemFadeIn {
+            from { opacity: 0; transform: translateY(-12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     .nav-toggle {
         display: block;
     }
