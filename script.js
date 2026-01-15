@@ -62,3 +62,20 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     alert('Köszönöm az üzenetet! (Ez csak demó űrlap)');
     this.reset();
 });
+
+// Profilkép váltás világos/sötét módhoz
+const profileImg = document.querySelector('.about-img img');
+function updateProfileImg() {
+    if (document.body.classList.contains('dark')) {
+        profileImg.src = 'meBlack.png';
+    } else {
+        profileImg.src = 'meWhite.png';
+    }
+}
+// Frissítés téma váltáskor
+if (profileImg) {
+    updateProfileImg();
+    themeToggle.addEventListener('click', () => {
+        setTimeout(updateProfileImg, 10);
+    });
+}
