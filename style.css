@@ -15,8 +15,6 @@
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
-    background: var(--bg);
-    color: var(--primary);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -193,7 +191,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(120deg, #fff 60%, #C28811 100%);
     padding-top: 64px;
 }
 .hero-content {
@@ -267,7 +264,6 @@ body {
 /* ===== About Szekció ===== */
 .about {
     padding: 100px 0 60px 0;
-    background: var(--white);
 }
 .about-container {
     display: grid;
@@ -334,7 +330,6 @@ body {
 
 /* ===== Projektek Szekció ===== */
 .projects {
-    background: var(--bg);
     padding: 100px 0 60px 0;
 }
 .projects h2 {
@@ -346,16 +341,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.2rem;
 }
-.project-card {
-    background: var(--white);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--secondary);
-    transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
-}
+
 .project-card {
     background: var(--white);
     border-radius: 18px;
@@ -446,7 +432,6 @@ body {
 
 /* ===== Kapcsolat Szekció ===== */
 .contact {
-    background: var(--white);
     padding: 100px 0 60px 0;
 }
 .contact-container {
@@ -464,10 +449,8 @@ body {
 .contact-form textarea {
     padding: 1em;
     border-radius: 10px;
-    border: 1.5px solid var(--secondary);
     font-size: 1em;
     font-family: inherit;
-    background: #fffbe6;
     resize: none;
     transition: border var(--transition);
 }
@@ -499,8 +482,6 @@ body {
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--primary);
-    color: var(--secondary);
     padding: 2em 0 1em 0;
     text-align: center;
     border-top: 2px solid var(--secondary);
@@ -517,7 +498,6 @@ body {
     margin-bottom: 0.5em;
 }
 .social-icons a {
-    color: var(--secondary);
     transition: color var(--transition);
 }
 .social-icons a:hover {
