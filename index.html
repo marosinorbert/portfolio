@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
 </head>
-<body>
+<body class="dark">
 
 <header class="header">
     <div class="container nav-container">
@@ -106,12 +106,24 @@
     <section id="contact" class="contact">
     <div class="container contact-container">
         <h2 class="gold-text">Kapcsolat</h2>
-        <form class="contact-form" autocomplete="off">
-            <input type="text" placeholder="Név" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="5" placeholder="Üzenet" required></textarea>
-            <button type="submit" class="btn submit-btn">Küldés</button>
-        </form>
+<form 
+    class="contact-form"
+    action="https://formspree.io/f/mojjvkrg"
+    method="POST"
+    novalidate
+>
+    <input type="text" name="name" placeholder="Név" required>
+
+    <input type="email" name="email" placeholder="Email" required>
+
+    <textarea name="message" rows="5" placeholder="Üzenet" required></textarea>
+
+    <!-- opcionális: spam védelem -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit" class="btn submit-btn">Küldés</button>
+</form>
+<p class="form-status"></p>
     </div>
 </section>
 
