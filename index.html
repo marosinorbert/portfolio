@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marosi Norbert | Portfólió</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo gold-text">Marosi Norbert</div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Kezdőlap</a></li>
+                    <li><a href="#about">Rólam</a></li>
+                    <li><a href="#projects">Projektek</a></li>
+                    <li><a href="#contact">Kapcsolat</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Menü megnyitása">
+                    <span class="hamburger"></span>
+                </button>
+                <button class="theme-toggle" aria-label="Sötét/Világos mód váltása">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="greeting">Szia, a nevem</p>
+            <h1 class="gold-text">Marosi Norbert</h1>
+            <h2 class="gold-text">Webfejlesztő & Designer</h2>
+            <a href="#projects" class="cta-btn">Munkáim megtekintése</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-img">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marosi Norbert profilkép">
+            </div>
+            <div class="about-content">
+                <h2 class="gold-text">Rólam</h2>
+                <p>Üdvözöllek a portfólió oldalamon! Szenvedélyem a modern, letisztult weboldalak készítése, ahol a funkcionalitás és az esztétika kéz a kézben járnak. Több éves tapasztalattal rendelkezem front-end fejlesztésben és UI/UX designban.</p>
+                <p>Célom, hogy minden projektben a legmagasabb minőséget és felhasználói élményt nyújtsam.</p>
+                <div class="skills">
+                    <h3 class="gold-text">Készségek</h3>
+                    <ul class="skills-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                        <li>UI/UX</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="gold-text">Projektek</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Projekt 1">
+                    <div class="project-info">
+                        <h3 class="gold-text">Modern Webshop</h3>
+                        <p>Reszponzív, letisztult webshop felület egyedi dizájnnal és kosár funkcióval.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn" target="_blank">Demo</a>
+                            <a href="#" class="btn" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Projekt 2">
+                    <div class="project-info">
+                        <h3 class="gold-text">Portfólió Oldal</h3>
+                        <p>Személyes portfólió weboldal, amely bemutatja a készségeimet és projektjeimet.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn" target="_blank">Demo</a>
+                            <a href="#" class="btn" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Projekt 3">
+                    <div class="project-info">
+                        <h3 class="gold-text">Időjárás App</h3>
+                        <p>Valós idejű időjárás információk letisztult, mobilbarát felületen.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn" target="_blank">Demo</a>
+                            <a href="#" class="btn" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <h2 class="gold-text">Kapcsolat</h2>
+            <p>Vedd fel velem a kapcsolatot az alábbi űrlapon keresztül!</p>
+            <form class="contact-form" autocomplete="off">
+                <input type="text" name="name" placeholder="Név" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="5" placeholder="Üzenet" required></textarea>
+                <button type="submit" class="btn submit-btn">Küldés</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.844-1.563 3.042 0 3.604 2.003 3.604 4.605v5.591z"/></svg></a>
+                <a href="https://github.com/" target="_blank" aria-label="GitHub"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+            </div>
+            <p>© 2026 Marosi Norbert. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+</body>
+</html>

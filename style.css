@@ -1,0 +1,658 @@
+/* ===== Alap stílusok ===== */
+:root {
+    --primary: #111; /* fekete */
+    --secondary: #C28811; /* arany - mélyebb */
+    --accent: #FFD700; /* világos arany highlight */
+    --gold-bmp: url('gold.bmp');
+    --gold-shadow: 0 0 1px 0 #FFD70022;
+    --gold-highlight: linear-gradient(120deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.0) 60%);
+    --bg: #fff; /* fehér */
+    --white: #fff;
+    --shadow: 0 4px 24px rgba(17,17,17,0.08);
+    --blur-bg: rgba(255,255,255,0.85);
+    --transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== Header & Navigáció ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--blur-bg);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow);
+    border-bottom: 2px solid var(--secondary);
+    transition: background 0.3s;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    background: var(--gold-bmp);
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: none;
+    position: relative;
+    z-index: 1;
+}
+.logo::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: var(--gold-highlight);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: 8px;
+    mix-blend-mode: lighten;
+    transition: opacity 0.4s;
+}
+.logo:hover::after {
+    opacity: 0.32;
+}
+.nav {
+    display: flex;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    transition: color var(--transition);
+    position: relative;
+    letter-spacing: 0.5px;
+}
+.nav-links li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: var(--secondary);
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+.nav-links li a:hover {
+    color: var(--secondary);
+}
+.nav-links li a:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 2px #FFD70044;
+}
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+.hamburger {
+    width: 28px;
+    height: 3px;
+    background: var(--secondary);
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    transition: background var(--transition);
+}
+.hamburger {
+    width: 28px;
+    height: 3px;
+    background: var(--gold-gradient);
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    transition: background var(--transition);
+    box-shadow: var(--gold-shadow);
+}
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 3px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    transition: transform var(--transition);
+    box-shadow: none;
+}
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+    transition: transform var(--transition);
+}
+.hamburger::before {
+    top: -9px;
+}
+.hamburger::after {
+    top: 9px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--secondary);
+    transition: color var(--transition);
+}
+.theme-toggle .theme-icon {
+    pointer-events: none;
+}
+
+/* ===== Hero Szekció ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(120deg, #fff 60%, #C28811 100%);
+    padding-top: 64px;
+}
+.hero-content {
+    max-width: 600px;
+}
+.greeting {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0.2em 0 0.1em 0;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--secondary);
+    margin-bottom: 1.5em;
+}
+.cta-btn {
+    display: inline-block;
+    padding: 0.9em 2.2em;
+    background: var(--gold-bmp);
+    background-size: cover;
+    background-position: center;
+    color: var(--primary);
+    border-radius: 32px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: var(--gold-shadow);
+    border: 2px solid var(--secondary);
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    left: -60%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: var(--gold-highlight);
+    opacity: 0.0;
+    pointer-events: none;
+    transition: left 0.7s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+}
+.cta-btn:hover::after {
+    left: 100%;
+    opacity: 0.18;
+}
+.cta-btn:hover {
+    background: var(--primary);
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 2px 0 #FFD70044;
+    transform: translateY(-2px) scale(1.04);
+}
+.cta-btn:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* ===== About Szekció ===== */
+.about {
+    padding: 100px 0 60px 0;
+    background: var(--white);
+}
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+.about-img {
+    display: flex;
+    justify-content: center;
+}
+.about-img img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    border: 4px solid var(--secondary);
+}
+.about-content h2 {
+    margin-top: 0;
+}
+.skills {
+    margin-top: 1.5em;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.skills-list li {
+    background: var(--gold-bmp);
+    background-size: cover;
+    background-position: center;
+    color: var(--primary);
+    border-radius: 16px;
+    padding: 0.4em 1.1em;
+    font-size: 0.98em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+.skills-list li::after {
+    content: '';
+    position: absolute;
+    left: -60%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: var(--gold-highlight);
+    opacity: 0.0;
+    pointer-events: none;
+    transition: left 0.7s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+}
+.skills-list li:hover::after {
+    left: 100%;
+    opacity: 0.18;
+}
+
+/* ===== Projektek Szekció ===== */
+.projects {
+    background: var(--bg);
+    padding: 100px 0 60px 0;
+}
+.projects h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.2rem;
+}
+.project-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--secondary);
+    transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
+}
+.project-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: var(--gold-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--secondary);
+    transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
+}
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 4px 12px #FFD70033;
+    border: 2px solid var(--accent);
+}
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(17,17,17,0.13);
+    border: 2px solid var(--primary);
+}
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.project-info {
+    padding: 1.3em 1.2em 1.5em 1.2em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+.project-links {
+    margin-top: 1.2em;
+    display: flex;
+    gap: 1em;
+}
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.3em;
+    background: var(--gold-bmp);
+    background-size: cover;
+    background-position: center;
+    color: var(--primary);
+    border-radius: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+    border: 2px solid var(--secondary);
+    cursor: pointer;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+.btn::after {
+    content: '';
+    position: absolute;
+    left: -60%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: var(--gold-highlight);
+    opacity: 0.0;
+    pointer-events: none;
+    transition: left 0.7s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+}
+.btn:hover::after {
+    left: 100%;
+    opacity: 0.18;
+}
+.btn:hover {
+    background: var(--primary);
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 2px 0 #FFD70044;
+    transform: translateY(-2px) scale(1.04);
+}
+.btn:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* ===== Kapcsolat Szekció ===== */
+.contact {
+    background: var(--white);
+    padding: 100px 0 60px 0;
+}
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin-top: 2em;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 1em;
+    border-radius: 10px;
+    border: 1.5px solid var(--secondary);
+    font-size: 1em;
+    font-family: inherit;
+    background: #fffbe6;
+    resize: none;
+    transition: border var(--transition);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1.5px solid var(--primary);
+}
+.submit-btn {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 0.8em 0;
+    background: var(--gold-bmp);
+    background-size: cover;
+    background-position: center;
+    color: var(--primary);
+    border-radius: 24px;
+    font-weight: 600;
+    border: 2px solid var(--secondary);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+.submit-btn:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 2em 0 1em 0;
+    text-align: center;
+    border-top: 2px solid var(--secondary);
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.social-icons {
+    display: flex;
+    gap: 1.2em;
+    margin-bottom: 0.5em;
+}
+.social-icons a {
+    color: var(--secondary);
+    transition: color var(--transition);
+}
+.social-icons a:hover {
+    color: var(--primary);
+}
+
+/* ===== Reszponzív ===== */
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .about-img {
+        margin-bottom: 1.5em;
+    }
+}
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        width: 96%;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+    .about-img img {
+        width: 120px;
+        height: 120px;
+    }
+}
+@media (max-width: 800px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background: var(--blur-bg);
+        flex-direction: column;
+        width: 200px;
+        box-shadow: var(--shadow);
+        border-radius: 0 0 0 18px;
+        padding: 1.5em 0;
+        z-index: 200;
+        gap: 1.5em;
+        align-items: flex-end;
+        text-align: right;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* ===== Sötét mód ===== */
+body.dark {
+    background: #111;
+    color: var(--secondary);
+}
+body.dark .header {
+    background: rgba(17,17,17,0.95);
+    border-bottom: 2px solid var(--secondary);
+}
+body.dark .nav-links li a {
+    color: var(--secondary);
+}
+body.dark .nav-links li a:hover {
+    color: var(--white);
+}
+body.dark .nav-links li a::after {
+    background: var(--secondary);
+}
+body.dark .theme-toggle {
+    color: var(--secondary);
+}
+body.dark .hero {
+    background: linear-gradient(120deg, #111 60%, #C28811 100%);
+}
+body.dark .about {
+    background: #181818;
+}
+body.dark .projects {
+    background: #111;
+}
+body.dark .project-card {
+    background: #181818;
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+body.dark .btn, body.dark .cta-btn, body.dark .submit-btn {
+    background: var(--gold-bmp) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    color: #111 !important;
+    border: 2px solid var(--secondary) !important;
+}
+body.dark .btn:hover, body.dark .cta-btn:hover, body.dark .submit-btn:hover {
+    background: #111;
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+body.dark .contact {
+    background: #181818;
+}
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background: #111;
+    color: var(--secondary);
+    border: 1.5px solid var(--secondary);
+}
+body.dark .footer {
+    background: #111;
+    color: var(--secondary);
+    border-top: 2px solid var(--secondary);
+}
+body.dark .social-icons a {
+    color: var(--secondary);
+}
+body.dark .social-icons a:hover {
+    color: var(--white);
+}
+.gold-text {
+    background: var(--gold-bmp);
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    color: transparent;
+}
